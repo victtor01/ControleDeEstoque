@@ -1,0 +1,486 @@
+
+:root{
+    --laranja: #fda40a;
+    --branco: rgb(244, 246, 255);
+    --cinza: #f0f2f5;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    scroll-snap-type: y mandatory;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--cinza);
+}
+
+main{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: var(--cinza);
+}
+
+hr{
+    background-color: rgba(103, 101, 101, 0.108);
+    border: 1px solid rgba(215, 215, 215, 0.058);
+}
+
+a {
+    font-weight: 600;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 16pt;
+}
+
+th {
+    color: black;
+    font-size: 12pt;
+    text-transform: uppercase;
+    height: 35px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(91, 91, 91);
+}
+
+td {
+    word-wrap: break-word;
+    text-align:center;
+    font-size: 12pt;
+    padding: 5px;
+    font-weight: 500;
+    text-shadow: 0px 0px 3px rgb(245, 245, 245);
+    text-transform:inherit;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+    height: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse:separate;
+    overflow: scroll;
+    padding: 5px;
+    /*
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
+    */
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.header-titulo {
+    width: 100%;
+    min-width: 300px;
+    height: 10vh;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0));
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: #fff;
+    box-shadow: 0px 0px 10px -4px rgb(191, 191, 191);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.titulo-section {
+    background-color: #38383a00;
+    margin-top: 2px;
+    border-radius: 50px;
+    height:55px;
+    width: 100%;
+    
+}
+
+.titulo-principal {
+    position: sticky;
+    top: 0px;
+    font-size: 12pt;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.section_principal{
+    width: 100%;
+    max-height: 90vh;
+    box-shadow: 0px 0px 6px rgb(255, 255, 255);
+    background: none;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 5px;
+    padding-bottom: 10px;
+    position: relative;
+    background-color: var(--cinza);
+}
+
+
+.botoes-principais {
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+    align-items: center;
+    padding: 10px;
+}
+
+.botoes-principais form{
+    width: 100%;
+    display: flex;
+}
+.botao {
+    width: 170px;
+    height: 46px;
+    color: white;
+    background-color: #1b1b1b;
+    border: 0;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12pt;
+    box-shadow: 3px 3px 10px #bcbcbc86;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.botao:hover { 
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 3px 3px 0px rgba(192, 192, 192, 0.818);
+
+}
+
+.div-pesquisar {
+    position: absolute;
+    right: 0;
+    display: flex;
+    margin-right: 10px;
+}
+
+.pesquisar {
+    height: 40px;
+    width: 160px;
+    margin: 8px;
+    padding: 10px;
+    outline: none;
+    border-radius: 15px;
+    background-color: var(--branco);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+    transition: 0.25s;
+    box-shadow: 0px 0px 4px rgb(236, 236, 236);
+    border: 0;
+}
+
+.pesquisar::placeholder{
+    font-weight: 500;
+    color: #9c9c9f;
+}
+
+.pesquisar:focus{
+    width: 250px;
+    box-shadow: 0px 0px 10px -5px rgb(218, 218, 218);
+}
+
+/*fonts*/
+
+.times{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+}
+
+.arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+    font-size: 5rem; 
+    text-align: left;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.subtitle{
+    font-size: 2rem;
+    color: black;
+}
+
+/*global*/
+
+.shadowbox{
+    box-shadow: 0px 3px 20px rgba(165, 164, 164, 0.475);
+}
+
+.center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.justifycenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textalign{
+    text-align:left;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.fullscrenn{
+    width: 100%;
+    height: 100%;
+}
+
+.fullwidth{
+    width: 100%;
+}
+
+.formatinput{
+    border: 1px solid rgb(189, 187, 187);
+    outline-color: #fda40a;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+}
+
+.formatbutton{
+    border: none;
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: 550;
+}
+
+/* login */
+
+#boxLogin {
+    width: 55rem;
+    max-height: 20rem;
+    border-radius: 5px;
+    padding: 0;
+}
+
+#button_cadastro{
+    width: 50%; 
+    color: #fff; 
+    height: 3.2rem; 
+    background-color: #33b249; 
+    border-radius: 5px;
+    margin: 10px auto 10px auto;
+}
+
+#buttonLogin{
+    height: 3.2rem; 
+    margin: 10px auto 5px auto; 
+    border-radius: 10px;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fda40a;
+    font-weight: 600;
+    color: white;
+}
+
+#buttonLogin:hover{
+    box-shadow: 0px 3px 12px rgba(174, 173, 173, 0.277);
+    background-color: #f29c08;
+}
+
+#sectionLogin{
+    background-color: #fff; 
+    border-radius: 10px;
+}
+
+
+/* Nav lateral */
+
+
+.barra-lateral {
+    height: 90vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    max-width: 215px;
+    min-width: 200px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    overflow: scroll;
+    overflow-x: hidden;
+    font-size: 8pt;
+    z-index: 10;
+}
+
+.barra-lateral::-webkit-scrollbar {
+    width: 12px;            
+}
+  
+.barra-lateral::-webkit-scrollbar-track {
+    background: var(--cinza);
+  }
+  
+.barra-lateral::-webkit-scrollbar-thumb {
+    background-color: #5f5f5f;
+    border-radius: 20px;      
+    border: 3px solid var(--cinza); 
+    scrollbar-width: thin;
+  }
+
+.barra-lateral header {
+    text-align: center;
+    margin: 20px auto 20px auto;
+    font-size: 10pt;
+}
+.barra-lateral header h2{
+    font-weight: 500;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 12pt;
+}
+.barra-lateral section {
+    float: left;
+    width: 100%;
+}
+.barra-lateral .clientes-funcionarios{
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+.barra-lateral a , 
+.barra-lateral .clientes-funcionarios{
+    width: 90%;
+    justify-content: left;
+    padding-left: 5%; 
+    text-decoration: none;
+    font-weight: 200;
+    height: 50px;
+    box-sizing: border-box;
+    transition: 0.10s;
+    font-size: 14pt;
+    color: #fff;
+    margin: 2px auto 2px auto;
+    border-radius: 6px;
+    border: none;
+    position: relative;
+}
+.barra-lateral a:hover, 
+.barra-lateral .clientes-funcionarios:hover{
+    background-color: #f98b465c;
+    font-size: 15pt;
+}
+.selecionado{
+    background-color: #b3561c;
+}
+.barra-lateral .selecionado span{
+    font-size: 14pt;
+}
+
+.barra-lateral span {
+    font-size: 10pt;
+    margin-left: 5px;
+}
+
+.barra-lateral .imagem {
+    width:120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 0px auto;
+    overflow: hidden;
+}
+
+.barra-lateral section .sair{
+    background-color: rgb(87, 32, 32);
+    margin: 20px auto 20px auto;
+    height: 45px;
+    width: 145px;
+    font-size: 14pt;
+    border-radius: 15px;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+.barra-lateral section .sair:hover{
+    transform: scale(1.05);
+    background-color: rgb(145, 43, 43);
+}
+.barra-lateral .href-clientes-funcionarios a:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+.barra-lateral .href-clientes-funcionarios a::before{
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: #b3561c;
+    margin-left: 5px;
+    transition: 0.6s;
+    position: absolute;
+}
+.barra-lateral .href-clientes-funcionarios a:hover:before{
+    width: 100%;
+    background-color: #b3561c;
+    position: absolute;
+}
+.barra-lateral .href-clientes-funcionarios{
+    display: none;
+    font-size: 12pt;
+    transition: 1s;
+}
+.barra-lateral .href-clientes-funcionarios a{
+
+    height: 45px;
+    overflow: hidden;
+    position: relative;
+}
+.barra-lateral .clientes-funcionarios #ion-icon-seta-financeiro, #ion-icon-seta{
+    transition: 0.1s;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    margin-right: 10px;
+}
+.barra-lateral .href-clientes-funcionarios a span{
+    font-size: 12pt;
+    margin-left: 30px;
+    z-index: 2;
+}
