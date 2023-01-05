@@ -59,7 +59,7 @@ function router()
         $matchedUri = regularExpressMatchUri($uri, $routes[$requestMethod]);
         $uri = explode('/', ltrim($uri, '/'));
         $params = params($uri, $matchedUri);
-        $parmas = formatParams($uri, $params);
+        $params = formatParams($uri, $params);
     }
     
     if(! empty($matchedUri))

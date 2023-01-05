@@ -6,17 +6,15 @@
     </header>
     <section id="sectionLogin" class="fullscrenn shadowbox justifycenter">
         <form action="/login" method="POST" style="padding: 15px;" class="fullscrenn column">
-            <label class="fullwidth">
-                <span> E-mail: *</span>
+            <label class="fullwidth" style="margin-bottom: 0.8rem;">
                 <div>
-                    <input class="fullwidth formatinput" style="height: 3rem;" 
+                    <input class="inputLogin fullwidth formatinput" style="height: 3rem;" 
                     type="email" name="email" id="" placeholder="Email" required autocomplete="off">
                 </div>
             </label>
             <label class="fullwidth">
-                <span> Password: *</span>
                 <div>
-                    <input class="fullwidth formatinput" style="height: 3rem;" 
+                    <input class="inputLogin fullwidth formatinput" style="height: 3rem;" 
                     type="password" name="senha" id="" placeholder="Senha" required autocomplete="off">
                 </div>
             </label>

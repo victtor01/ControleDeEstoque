@@ -1,5 +1,4 @@
 <section class="section_principal">
-    <form action="" method="POST">
         <header class="header-titulo titulo-section">
             <h1>
                 Produtos
@@ -13,7 +12,10 @@
                 </button>
             </div>
             <div class="div-pesquisar div">
-                <input id="busca" type="text" placeholder="Pesquise..." class="pesquisar" value="<?php if(isset($_GET['buscar'])){ echo $_GET['buscar'];}?>">
+                <input id="busca" value="" type="search" placeholder="Pesquise..." class="pesquisar">
+                <button onclick="buscar()" type="button" class="button justifycenter" style="font-size: 1.3rem; background-color: #f0f2f5;padding: 1rem; border-radius: 20px; height: 3rem; margin: auto">
+                <ion-icon name="search-outline"></ion-icon>
+                </button>
             </div>
             <div class="div">
                 <button type="submit" class="botao" id="modalremessa" value="submit-saida-produto" name="submit-entrada-produto">
@@ -28,9 +30,7 @@
                 </button>
             </div>
         </div>
-
-        <section class="section-produtos" 
-        id="produtos">
+        <section class="section-produtos" style="margin-top: 1rem;">
                 <table id="tabela-produtos">
                     <thead>
                         <tr class='tr'>
@@ -39,57 +39,45 @@
                             <th> Categoria</th>
                             <th> Tamanho</th>
                             <th > Quantidade</th>
-                            <th style ="max-width: 40px"> Preço de Compra</th>
+                            <th style ="min-width: 40px"> Preço de Compra</th>
                             <th max-width='40px'> Lucro (%) </th>
                             <th> Preço de venda: </th>
-                            <th> Data</th>
-                            <th style='min-width: 100px;'> Ações </th>
+                            <th> Data </th>
+                            <th style='max-width: 10px; color: #000'> Ações </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php
-                            foreach($produto as $key => $data):
-                                ?>
-                                <tr>
-                                    <td>
-                                    <td>
-                                        <?php echo $produto[$key]['nome']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $produto[$key]['categoria']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $produto[$key]['tamanho']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $produto[$key]['quantidade']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $produto[$key]['valor_investido']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $produto[$key]['lucro_esperado']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo  (($produto[$key]['lucro_esperado']/100) * $produto[$key]['valor_investido']) +  $produto[$key]['valor_investido']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $produto[$key]['data_produto']; ?>
-                                    </td>
-                                    <td>
-                                        <button>
-                                            <a href="/produto/editar/<?php echo $produto[$key]['id_produto']?>"> EDITAR </a>
-                                        </button>
-                                        <button>
-                                            <a href="/produto/excluir/<?php echo $produto[$key]['id_produto']?>"> EXCLUIR</a>
-                                        </button>
-                                    </td>
-                                <tr>
-                                <?php
-                            endforeach
-                        ?>
+                    <tbody id="produtos">
+
                     </tbody>
                 </table>
+
+                <footer class="footer">
+                    <nav  class="paginacao">
+                            <ul class="pagination">
+                                
+                                <li class="page-item">
+                                    <button class="page-link" type="button" style="width: 100%; height: 100%">
+                                        <a href="/produtos/page/<?php echo $page['start'] < 1 || $page['start'] > $page['numPages'] ? 1 : $page['start'] - 1 ?>"> <ion-icon name="chevron-back-outline"></ion-icon> </a> 
+                                    </button>
+                                </li>
+
+                                <?php for($i = 1; $i < $page['numPages'] + 1; $i++): ?>
+                                    <li class="page-item">
+                                        <button class="page-link" onclick="buscar(<?php echo $i ?>)" type="button" style="width: 100%; height: 100%">
+                                            <?php echo $i?>
+                                        </button>
+                                    </li>
+                                <?php endfor ?>
+
+                                <li class="page-item">
+                                    <button class="page-link" type="button" style="width: 100%; height: 100%">
+                                        <a href="/produtos/page/<?php echo $page['start'] < 1 || $page['start'] > $page['numPages'] ? 1 : $page['start'] + 1 ?>"> <ion-icon name="chevron-forward-outline"></ion-icon> </a>
+                                    </button>
+                                </li>
+                            
+                            </ul>
+                    </nav>
+                </footer>
+
         </section>
-    </form>
 </section>

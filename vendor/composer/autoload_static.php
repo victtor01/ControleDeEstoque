@@ -12,6 +12,7 @@ class ComposerStaticInit4697616a358ffbbf20e40183d71f2e08
         '7019a82c0d14561d7df2da24925433de' => __DIR__ . '/../..' . '/app/helpers/constants.php',
         '8afb389d739f447b4821f41d8897f56f' => __DIR__ . '/../..' . '/app/helpers/redirect.php',
         '88b2b58caf7e72cf547c4694b99d5101' => __DIR__ . '/../..' . '/app/helpers/validate.php',
+        'ffaf448236ce4c9a030f7136cf09bb8b' => __DIR__ . '/../..' . '/app/helpers/pagination.php',
         'e752e72d01f3175f42212af071cfe914' => __DIR__ . '/../..' . '/app/database/connect.php',
         '58f7ac24a2e570e58801a6f73ea775aa' => __DIR__ . '/../..' . '/app/database/fetch.php',
     );
@@ -32,7 +33,9 @@ class ComposerStaticInit4697616a358ffbbf20e40183d71f2e08
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'app\\controllers\\Home' => __DIR__ . '/../..' . '/app/controllers/Home.php',
         'app\\controllers\\Login' => __DIR__ . '/../..' . '/app/controllers/Login.php',
+        'app\\controllers\\Produto' => __DIR__ . '/../..' . '/app/controllers/Produto.php',
         'app\\controllers\\User' => __DIR__ . '/../..' . '/app/controllers/User.php',
     );
 

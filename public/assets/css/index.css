@@ -47,9 +47,8 @@ th {
     color: black;
     font-size: 12pt;
     text-transform: uppercase;
-    height: 35px;
-    background-color: #ffffff;
-    border-bottom: 1px solid rgb(91, 91, 91);
+    height: 40px;
+    background-color: #fff;
 }
 
 td {
@@ -61,9 +60,8 @@ td {
     text-shadow: 0px 0px 3px rgb(245, 245, 245);
     text-transform:inherit;
 }
-
-tr:nth-child(even) {
-    background-color: #ffffff;
+tr{
+    background-color: rgb(255, 255, 255);
 }
 
 table {
@@ -72,11 +70,18 @@ table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse:separate;
     overflow: scroll;
-    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+
     /*
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
     */
+}
+
+button{
+    border: none;
+    cursor: pointer;
 }
 
 .container{
@@ -275,8 +280,6 @@ table {
 
 .formatinput{
     border: 1px solid rgb(189, 187, 187);
-    outline-color: #fda40a;
-    border-radius: 10px;
     padding: 10px;
     margin: 0;
 }
@@ -312,7 +315,7 @@ table {
     border-radius: 10px;
     font-size: 12pt;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fda40a;
+    background-color: var(--laranja);
     font-weight: 600;
     color: white;
 }
@@ -324,6 +327,12 @@ table {
 
 #sectionLogin{
     background-color: #fff; 
+    border-radius: 10px;
+}
+
+.inputLogin{
+    box-sizing: border-box;
+    outline-color: var(--laranja);
     border-radius: 10px;
 }
 
@@ -352,35 +361,39 @@ table {
   
 .barra-lateral::-webkit-scrollbar-track {
     background: var(--cinza);
-  }
+}
   
 .barra-lateral::-webkit-scrollbar-thumb {
     background-color: #5f5f5f;
     border-radius: 20px;      
     border: 3px solid var(--cinza); 
     scrollbar-width: thin;
-  }
+}
 
 .barra-lateral header {
     text-align: center;
     margin: 20px auto 20px auto;
     font-size: 10pt;
 }
+
 .barra-lateral header h2{
     font-weight: 500;
     font-family:Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-size: 12pt;
 }
+
 .barra-lateral section {
     float: left;
     width: 100%;
 }
+
 .barra-lateral .clientes-funcionarios{
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0);
 }
+
 .barra-lateral a , 
 .barra-lateral .clientes-funcionarios{
     width: 90%;
@@ -398,16 +411,25 @@ table {
     border: none;
     position: relative;
 }
+
 .barra-lateral a:hover, 
 .barra-lateral .clientes-funcionarios:hover{
     background-color: #f98b465c;
     font-size: 15pt;
 }
+
+.barra-lateral a:focus, 
+.barra-lateral .clientes-funcionarios:focus{
+    background-color: #f5935688;
+    font-size: 15pt;
+}
+
 .selecionado{
     background-color: #b3561c;
 }
+
 .barra-lateral .selecionado span{
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .barra-lateral span {
@@ -439,13 +461,16 @@ table {
     padding: 20px;
     transition: 0.3s;
 }
+
 .barra-lateral section .sair:hover{
     transform: scale(1.05);
     background-color: rgb(145, 43, 43);
 }
+
 .barra-lateral .href-clientes-funcionarios a:hover{
     background-color: rgba(0, 0, 0, 0);
 }
+
 .barra-lateral .href-clientes-funcionarios a::before{
     content: '';
     width: 1px;
@@ -455,22 +480,26 @@ table {
     transition: 0.6s;
     position: absolute;
 }
+
 .barra-lateral .href-clientes-funcionarios a:hover:before{
     width: 100%;
     background-color: #b3561c;
     position: absolute;
 }
+
 .barra-lateral .href-clientes-funcionarios{
     display: none;
     font-size: 12pt;
     transition: 1s;
 }
+
 .barra-lateral .href-clientes-funcionarios a{
 
     height: 45px;
     overflow: hidden;
     position: relative;
 }
+
 .barra-lateral .clientes-funcionarios #ion-icon-seta-financeiro, #ion-icon-seta{
     transition: 0.1s;
     right: 0;
@@ -479,8 +508,53 @@ table {
     position: absolute;
     margin-right: 10px;
 }
+
 .barra-lateral .href-clientes-funcionarios a span{
     font-size: 12pt;
     margin-left: 30px;
     z-index: 2;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    background:none;
+    height: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12pt;
+    position: sticky;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginacao{
+    margin: 10px auto 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 1px rgba(185, 185, 185, 0.914);
+}
+.paginacao > .pagination{
+    display: flex;
+    list-style-type: none;
+    
+}
+.paginacao > .pagination > li{
+    box-sizing: border-box;
+    width: 2.5em;
+    height: 2.5em;
+    box-shadow: 0px 0px 0px rgb(136, 136, 136);
+}
+.paginacao > .pagination > li button{
+    text-decoration: none;
+    color: #060606;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    transition:0.3s;
+}
+.paginacao > .pagination > li button:hover{
+    box-shadow: 0px 0px 10px rgb(202, 202, 202);
+    background-color: #000000;
+    color: white;
 }

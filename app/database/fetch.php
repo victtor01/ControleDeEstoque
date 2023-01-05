@@ -1,8 +1,10 @@
 <?php
 
-function getAll($table, $field = '*')
+function getAll($table, $pag = 1, $field = '*', $pagination = 5)
 {
-    $SQL = "SELECT {$field} FROM {$table}";
+    $pagination = pagination($table, $pagination, $pag);
+    $options = "LIMIT $pagination[start], $pagination[numPorPagina]";
+    $SQL = "SELECT {$field} FROM {$table} " . "{$options}";
     $query = connect()->query($SQL);
     $query->fetch_assoc();
     $refactor = [];
@@ -11,10 +13,13 @@ function getAll($table, $field = '*')
     {
         $refactor[$chave] = $data;
     }
-    
-    return $refactor;
 
-    /* SELECT P.*, F.nome, C.nome FROM produto P INNER JOIN fornecedor F  INNER JOIN categoria C WHERE P.fornecedor = F.id_fornecedor AND P.categoria = C.id_categoria */ 
+    return 
+    [
+        'refactor' => $refactor,
+        'numPages' => $pagination['numPages'],
+        'start' => $pagination['start']
+    ];
 }
 
 function findBy($data)
@@ -25,4 +30,9 @@ function findBy($data)
     $SQL = "SELECT {$fields} FROM {$table} WHERE {$field} = '{$value}'";
     $query = connect()->query($SQL);
     return $query->fetch_assoc();
+}
+
+function search($data)
+{
+    
 }
