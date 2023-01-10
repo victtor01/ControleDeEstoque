@@ -6,13 +6,14 @@ function getAll($table, $pag = 1, $field = '*', $pagination = 5)
     $options = "LIMIT $pagination[start], $pagination[numPorPagina]";
     $SQL = "SELECT {$field} FROM {$table} " . "{$options}";
     $query = connect()->query($SQL);
-    $query->fetch_assoc();
+    $query->fetch_all();
+    
     $refactor = [];
 
     foreach($query as $chave => $data)
     {
         $refactor[$chave] = $data;
-    }
+    } 
 
     return 
     [
@@ -20,9 +21,10 @@ function getAll($table, $pag = 1, $field = '*', $pagination = 5)
         'numPages' => $pagination['numPages'],
         'start' => $pagination['start']
     ];
+
 }
 
-function findBy($data)
+function findBy($data) 
 {
     extract($data);
     $fields = isset($fields) ? $fields : '*';
@@ -30,9 +32,4 @@ function findBy($data)
     $SQL = "SELECT {$fields} FROM {$table} WHERE {$field} = '{$value}'";
     $query = connect()->query($SQL);
     return $query->fetch_assoc();
-}
-
-function search($data)
-{
-    
 }

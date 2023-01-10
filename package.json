@@ -1,0 +1,20 @@
+{
+  "name": "systemrefactor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victtor01/ControleDeEstoque.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victtor01/ControleDeEstoque/issues"
+  },
+  "homepage": "https://github.com/victtor01/ControleDeEstoque#readme",
+  "keywords": [],
+  "description": ""
+}

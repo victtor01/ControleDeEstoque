@@ -20,7 +20,7 @@ body{
 }
 
 main{
-    min-height: 100%;
+    min-height: 91vh;
     width: 100%;
     display: flex;
     background-color: var(--cinza);
@@ -94,13 +94,12 @@ button{
 .header-titulo {
     width: 100%;
     min-width: 300px;
-    height: 10vh;
-    background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0));
+    height: 9vh;
+    background: linear-gradient(to right, #050b13, #050b13);
     display: flex;
     align-items: center;
     box-sizing: border-box;
     color: #fff;
-    box-shadow: 0px 0px 10px -4px rgb(191, 191, 191);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15pt;
     justify-content: center;
@@ -341,9 +340,9 @@ button{
 
 
 .barra-lateral {
-    height: 90vh;
+    height: 91vh;
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background-color: #050b13;
     max-width: 215px;
     min-width: 200px;
     position: relative;
@@ -538,12 +537,17 @@ button{
 .paginacao > .pagination{
     display: flex;
     list-style-type: none;
-    
+}
+.paginacao > .pagination > li button a ion-icon {
+    color: #000;
+}
+.paginacao > .pagination > li button a ion-icon:hover{
+    color: white;
 }
 .paginacao > .pagination > li{
     box-sizing: border-box;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2.2em;
+    height: 2.2em;
     box-shadow: 0px 0px 0px rgb(136, 136, 136);
 }
 .paginacao > .pagination > li button{
@@ -552,6 +556,8 @@ button{
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     transition:0.3s;
+    font-size: 14pt;
+    background-color: #fff;
 }
 .paginacao > .pagination > li button:hover{
     box-shadow: 0px 0px 10px rgb(202, 202, 202);

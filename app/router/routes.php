@@ -4,7 +4,7 @@ return [
     'POST' => 
     [
         '/login' => 'Login@store',
-        '/produtos/search' => 'Produto@search'
+        '/produto/search' => 'Produto@search'
     ],
     'GET' => 
     [

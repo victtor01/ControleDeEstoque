@@ -10,26 +10,24 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
-    <title><?php echo $data['data']['title'] ?></title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
     <?php if($view != VIEWS . 'login.php'): ?>
-
+        
         <?php require 'layouts/header.php';  ?>
+        
         <main>
-            <?php 
-            require 'layouts/sidebar.php';
-            require $view;
-            ?>
+            <?php require 'layouts/sidebar.php'; ?>
+            <?php require $view; ?>
         </main>
 
     <?php else: ?>
-        
+
         <?php require $view ?>
 
     <?php endif ?>
-
-    <script src="/assets/js/app.js"></script>
     
+    <script type="module" src="/assets/js/app.js"></script>
 </body>
 </html>
