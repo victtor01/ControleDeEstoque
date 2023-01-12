@@ -25,40 +25,44 @@ class Produto
         $pag = isset($_POST['pag']) ? $_POST['pag'] : 1;     
         $search = isset($_POST['busca']) ? $_POST['busca'] : ' ';
 
-        $table = "produto P 
-        INNER JOIN fornecedor F 
-        INNER JOIN categoria C 
-        WHERE P.nome LIKE '%{$search}%' 
+        read(table: 'produto P, fornecedor F, categoria C', 
+        fields: 'P.*, F.nome as nome_fornecedor, C.nome as nome_categoria');
+
+        like(field: 'P.nome', value: 'biquini');
+
+        andWhere(field: 'P.fornecedor',  value: 'F.id_fornecedor');
+
+        andWhere(field: 'P.categoria', value: 'C.id_categoria');
+
+        var_dump(execute());
+
+        /* $field = [
+            'P.* ,',
+            'F.nome as nome_fornecedor ,', 
+            'C.nome as nome_categoria'
+        ];
+        $tables = [
+            'produto P',
+            'fornecedor F',
+            'categoria C'
+        ];
+        $fields = [ 
+            'id_produto', 
+            'nome', 
+            'nome_categoria', 
+            'tamanho', 
+            'quantidade', 
+            'valor_investido',
+            'lucro_esperado', 
+            'lucro_esperado', 
+            'data_produto'
+        ];
+
+        $where = "P.nome LIKE '%{$search}%' 
         AND P.fornecedor = F.id_fornecedor 
         AND P.categoria = C.id_categoria";
 
-        $field = "P.*, F.nome as nome_fornecedor, C.nome as nome_categoria";
-
-        $data = getAll($table, $pag ,$field);
-
-        echo $search = json_encode(
-            [
-                'data' => $data['refactor'],
-                'page' => 
-                [
-                    'start' => $data['start'], 
-                    'numPages' => $data['numPages']
-                ],
-                'fields' => 
-                [
-                    0 => 'id_produto', 
-                    1 => 'nome', 
-                    2 => 'nome_categoria', 
-                    3 => 'tamanho', 
-                    4 => 'quantidade', 
-                    5 => 'valor_investido', 
-                    6 => 'lucro_esperado',
-                    7 => 'valor_venda',
-                    8 => 'data_produto'
-                ]   
-            ]
-        ); 
-
-        return $search;
-    }
+        $fetch = JoinAll($tables, $field, $where, $pag, $fields);
+        echo json_encode($fetch); */
+    } 
 }

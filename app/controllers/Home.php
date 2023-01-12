@@ -6,6 +6,7 @@ class Home
 {
     function index()
     {
+        
         validate();
         return 
         [

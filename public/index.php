@@ -21,6 +21,12 @@ try {
     {
         extract($data['data']);
     }
+   
+     /* // Create new Plates instance
+    $templates = new League\Plates\Engine(VIEWS);
+
+    // Render a template
+    echo $templates->render($data['view'], $data['data']); */
 
     $view = VIEWS . $data['view'];
 

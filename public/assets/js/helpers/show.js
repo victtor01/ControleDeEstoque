@@ -6,14 +6,16 @@ function showInTable(object, tbody, fields)
     {
         tbody += '<tr>';
             tbody += "<td> <input type='checkbox' style='width: 70%; height: 70%; border-radius: 5px'" +
-            `name='checkbox_id[$id]' value= ${object[i][0]} </td>`;
+            `name='checkbox_id[$id]' value=${object[i][fields[0]]}> </td>`;
             tbody += '</td>';
+
             for(let j = 1; j < fields.length ; j++)
             {
                 tbody += '<td>';
                     tbody += `${object[i][fields[j]]}`
                 tbody += '</td>';
             }
+
             tbody += 
             "<td class='justifycenter' style='justify-content: space-around;'>" +
                 "<button class='fullscreenn' style='padding: 6px; border-radius: 4px; background-color: green'>" +

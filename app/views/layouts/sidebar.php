@@ -9,7 +9,7 @@
         <a href="/">
             <ion-icon name="desktop-outline"></ion-icon> <span> Home </span>
         </a>
-        <a href="/produtos">
+        <a href="/produtos" class="selecionado">
             <ion-icon name="bag-outline"></ion-icon> <span> Produtos </span>
         </a>
         <a href="/categorias">
